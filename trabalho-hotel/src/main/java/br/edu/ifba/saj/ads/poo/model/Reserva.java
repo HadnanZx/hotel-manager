@@ -1,4 +1,4 @@
-package br.edu.ifba.saj.ads.poo;
+package br.edu.ifba.saj.ads.poo.model;
 
 public class Reserva {
     private Hospede hospede;

@@ -1,1 +1,6 @@
+br\edu\ifba\saj\ads\poo\model\Data.class
 br\edu\ifba\saj\ads\poo\App.class
+br\edu\ifba\saj\ads\poo\model\Hospede.class
+br\edu\ifba\saj\ads\poo\model\Quarto.class
+br\edu\ifba\saj\ads\poo\model\TipoQuarto.class
+br\edu\ifba\saj\ads\poo\model\Reserva.class
