@@ -1,30 +1,28 @@
 package br.edu.ifba.saj.ads.poo;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
+import br.edu.ifba.saj.ads.poo.presentation.CadastroHospedeController;
 
 public class App extends Application {
 
+    private GerenciadorReservas gerenciador = new GerenciadorReservas();
+
     @Override
-    public void start(Stage stage) {
-        Label labelNome = new Label("Nome:");
-        TextField campoNome = new TextField();
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastro-hospede.fxml"));
+        Parent raiz = loader.load();
 
-        Label labelCpf = new Label("CPF:");
-        TextField campoCpf = new TextField();
-
-        Button botaoCadastrar = new Button("Cadastrar");
-
-        VBox raiz = new VBox(labelNome, campoNome, labelCpf, campoCpf, botaoCadastrar);
+        CadastroHospedeController controller = loader.getController();
+        controller.setGerenciador(gerenciador);
 
         Scene cena = new Scene(raiz, 400, 300);
         stage.setScene(cena);
-        stage.setTitle("Cadastro de Hóspede");
+        stage.setTitle("Sistema do Hotel");
         stage.show();
     }
 
