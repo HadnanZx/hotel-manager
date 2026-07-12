@@ -6,3 +6,4 @@ br\edu\ifba\saj\ads\poo\presentation\CadastroHospedeController.class
 br\edu\ifba\saj\ads\poo\model\Hospede.class
 br\edu\ifba\saj\ads\poo\model\Quarto.class
 br\edu\ifba\saj\ads\poo\model\Reserva.class
+br\edu\ifba\saj\ads\poo\presentation\ReservaController.class

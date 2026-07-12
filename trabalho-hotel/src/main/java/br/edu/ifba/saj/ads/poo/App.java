@@ -7,23 +7,40 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
 import br.edu.ifba.saj.ads.poo.presentation.CadastroHospedeController;
+import br.edu.ifba.saj.ads.poo.presentation.ReservaController;
 
 public class App extends Application {
 
     private GerenciadorReservas gerenciador = new GerenciadorReservas();
+    private Stage stagePrincipal;
 
     @Override
     public void start(Stage stage) throws Exception {
+        this.stagePrincipal = stage;
+        abrirTelaCadastro();
+        stage.setTitle("Sistema do Hotel");
+        stage.show();
+    }
+
+    public void abrirTelaCadastro() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastro-hospede.fxml"));
         Parent raiz = loader.load();
 
         CadastroHospedeController controller = loader.getController();
         controller.setGerenciador(gerenciador);
+        controller.setApp(this);
 
-        Scene cena = new Scene(raiz, 400, 300);
-        stage.setScene(cena);
-        stage.setTitle("Sistema do Hotel");
-        stage.show();
+        stagePrincipal.setScene(new Scene(raiz, 400, 300));
+    }
+
+    public void abrirTelaReserva() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("reserva-quarto.fxml"));
+        Parent raiz = loader.load();
+
+        ReservaController controller = loader.getController();
+        controller.setGerenciador(gerenciador);
+
+        stagePrincipal.setScene(new Scene(raiz, 400, 400));
     }
 
     public static void main(String[] args) {

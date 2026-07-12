@@ -15,4 +15,8 @@ public class Hospede {
       public String getCpf(){
         return cpf;
     }
+    @Override
+    public String toString() {
+    return nome;
+    }
 }

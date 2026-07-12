@@ -21,5 +21,9 @@ public class Quarto {
         return preco;
     }
 
+    @Override
+    public String toString() {
+    return "Quarto " + numero + " (" + tipo + ")";
+    }
 
 }
