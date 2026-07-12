@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import br.edu.ifba.saj.ads.poo.model.Quarto;
 import br.edu.ifba.saj.ads.poo.model.Reserva;
-import br.edu.ifba.saj.ads.poo.model.Quarto;
 import br.edu.ifba.saj.ads.poo.model.Data;
 import br.edu.ifba.saj.ads.poo.model.Hospede;
 
