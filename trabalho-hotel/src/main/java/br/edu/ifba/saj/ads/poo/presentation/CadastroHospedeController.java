@@ -9,7 +9,6 @@ import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
 import br.edu.ifba.saj.ads.poo.App;
 
 public class CadastroHospedeController {
-
     @FXML
     private TextField campoNome;
 
@@ -23,18 +22,19 @@ public class CadastroHospedeController {
     private Button botaoIrParaReservas;
 
     private GerenciadorReservas gerenciador;
+
     private App app;
 
-    public void setApp(App app) {
-    this.app = app;
-}
-
-    public void setGerenciador(GerenciadorReservas gerenciador) {
+    public void setGerenciador(GerenciadorReservas gerenciador){
         this.gerenciador = gerenciador;
     }
 
+    public void setApp(App app){
+        this.app = app;
+    }
+
     @FXML
-    private void cadastrar() {
+    private void cadastrar(){
         String nome = campoNome.getText();
         String cpf = campoCpf.getText();
 
@@ -42,17 +42,18 @@ public class CadastroHospedeController {
         gerenciador.cadastrarHospede(novoHospede);
 
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setContentText("Hóspede cadastrado com sucesso!");
+        alerta.setContentText("Hóspede Cadastrado!");
         alerta.show();
 
         campoNome.clear();
         campoCpf.clear();
-
+    }
+    @FXML
+    private void irParaReservas() throws Exception {
+        app.abrirTelaReserva();
     }
 
-    
-        @FXML
-        private void irParaReservas() throws Exception {
-        app.abrirTelaReserva();
-        }
+
+
+
 }
