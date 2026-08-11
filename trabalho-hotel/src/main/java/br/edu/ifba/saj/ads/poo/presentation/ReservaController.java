@@ -38,6 +38,30 @@ public class ReservaController {
         comboQuarto.getItems().addAll(gerenciador.getQuartos());
     }
 
+    @FXML
+    private void reservar(){
+        Hospede hospedeEscolhido = comboHospede.getValue();
+        Quarto quartoEscolhido = comboQuarto.getValue();
+
+        LocalDate checkinEscolhido = dataCheckin.getValue();
+        LocalDate checkoutEscolhido = dataCheckout.getValue();
+
+        Data checkin = new Data(checkinEscolhido.getDayOfMonth(), checkinEscolhido.getMonthValue(), checkinEscolhido.getYear());
+        Data checkout = new Data(checkoutEscolhido.getDayOfMonth(), checkoutEscolhido.getMonthValue(), checkoutEscolhido.getYear());
+
+        boolean sucesso = gerenciador.criarReserva(hospedeEscolhido, quartoEscolhido, checkin, checkout);
+
+        Alert alerta;
+        if(sucesso){
+            alerta = new Alert(Alert.AlertType.INFORMATION);
+            alerta.setContentText("Sua reserva foi concluida!");
+        }else{
+            alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setContentText("Não foi possivel concluir sua reserva.");
+        }
+        alerta.show();
+    }
+
     
 
 }
