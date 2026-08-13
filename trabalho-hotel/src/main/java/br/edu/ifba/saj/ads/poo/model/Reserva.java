@@ -1,12 +1,13 @@
 package br.edu.ifba.saj.ads.poo.model;
+import java.time.LocalDate;
 
 public class Reserva {
     private Hospede hospede;
     private Quarto quarto;
-    private Data checkin;
-    private Data checkout;
+    private LocalDate checkin;
+    private LocalDate checkout;
 
-    public Reserva(Hospede hospede, Quarto quarto, Data checkin, Data checkout){
+    public Reserva(Hospede hospede, Quarto quarto, LocalDate checkin, LocalDate checkout){
         this.hospede = hospede;
         this.quarto = quarto;
         this.checkin = checkin;
@@ -19,10 +20,10 @@ public class Reserva {
     public Quarto getQuarto(){
         return quarto;
     }
-    public Data getCheckin(){
+    public LocalDate getCheckin(){
         return checkin;
     }
-    public Data getCheckout(){
+    public LocalDate getCheckout(){
         return checkout;
     }
 }

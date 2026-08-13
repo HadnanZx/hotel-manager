@@ -3,7 +3,7 @@ package br.edu.ifba.saj.ads.poo.business;
 import java.util.ArrayList;
 import br.edu.ifba.saj.ads.poo.model.Reserva;
 import br.edu.ifba.saj.ads.poo.model.Quarto;
-import br.edu.ifba.saj.ads.poo.model.Data;
+import java.time.LocalDate;
 import br.edu.ifba.saj.ads.poo.model.Hospede;
 import br.edu.ifba.saj.ads.poo.model.TipoQuarto;
 
@@ -32,11 +32,11 @@ public class GerenciadorReservas {
         return quartos;
     }
 
-    public boolean temConflito(Quarto quartoNovo, Data checkinNovo, Data checkoutNovo) {
+    public boolean temConflito(Quarto quartoNovo, LocalDate checkinNovo, LocalDate checkoutNovo) {
         for (Reserva reservaExistente : reservas) {
             if (reservaExistente.getQuarto() == quartoNovo) {
-                boolean semConflito = checkoutNovo.anterior(reservaExistente.getCheckin()) 
-                                    || checkinNovo.posterior(reservaExistente.getCheckout());
+                boolean semConflito = checkoutNovo.isBefore(reservaExistente.getCheckin()) 
+                                    || checkinNovo.isAfter(reservaExistente.getCheckout());
                 if (!semConflito) {
                     return true;
                 }
@@ -45,8 +45,8 @@ public class GerenciadorReservas {
         return false;
     }
 
-    public boolean criarReserva(Hospede hospede, Quarto quarto, Data checkin, Data checkout) {
-        if (!checkout.posterior(checkin)) {
+    public boolean criarReserva(Hospede hospede, Quarto quarto, LocalDate checkin, LocalDate checkout) {
+        if (!checkout.isAfter(checkin)) {
             return false;
         }
         if (temConflito(quarto, checkin, checkout)) {

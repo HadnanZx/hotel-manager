@@ -7,7 +7,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Alert;
 import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
 import java.time.LocalDate;
-import br.edu.ifba.saj.ads.poo.model.Data;
 import br.edu.ifba.saj.ads.poo.model.Hospede;
 import br.edu.ifba.saj.ads.poo.model.Quarto;
 
@@ -46,10 +45,7 @@ public class ReservaController {
         LocalDate checkinEscolhido = dataCheckin.getValue();
         LocalDate checkoutEscolhido = dataCheckout.getValue();
 
-        Data checkin = new Data(checkinEscolhido.getDayOfMonth(), checkinEscolhido.getMonthValue(), checkinEscolhido.getYear());
-        Data checkout = new Data(checkoutEscolhido.getDayOfMonth(), checkoutEscolhido.getMonthValue(), checkoutEscolhido.getYear());
-
-        boolean sucesso = gerenciador.criarReserva(hospedeEscolhido, quartoEscolhido, checkin, checkout);
+        boolean sucesso = gerenciador.criarReserva(hospedeEscolhido, quartoEscolhido, checkinEscolhido, checkoutEscolhido);
 
         Alert alerta;
         if(sucesso){
