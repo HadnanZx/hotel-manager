@@ -32,6 +32,10 @@ public class GerenciadorReservas {
         return quartos;
     }
 
+    public ArrayList<Reserva> getReservas(){
+        return reservas;
+    }
+
     public boolean temConflito(Quarto quartoNovo, LocalDate checkinNovo, LocalDate checkoutNovo) {
         for (Reserva reservaExistente : reservas) {
             if (reservaExistente.getQuarto() == quartoNovo) {
