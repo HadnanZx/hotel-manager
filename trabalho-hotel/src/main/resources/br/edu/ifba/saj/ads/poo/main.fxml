@@ -5,22 +5,21 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <BorderPane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifba.saj.ads.poo.presentation.MainController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="botaoCadastro" mnemonicParsing="false" onAction="#irParaCadastro" prefHeight="26.0" prefWidth="70.0" text="Cadastro">
+            <Button fx:id="botaoCadastro" mnemonicParsing="false" onAction="#mostrarCadastro" prefHeight="26.0" prefWidth="70.0" text="Cadastro">
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="5.0" top="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="botaoReserva" mnemonicParsing="false" onAction="#irParaReserva" prefHeight="26.0" prefWidth="70.0" text="Reserva">
+            <Button fx:id="botaoReserva" mnemonicParsing="false" onAction="#mostrarReserva" prefHeight="26.0" prefWidth="70.0" text="Reserva">
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="5.0" top="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="botaoLista" mnemonicParsing="false" onAction="#irParaLista" prefHeight="26.0" prefWidth="70.0" text="Lista">
+            <Button fx:id="botaoLista" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Lista">
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="5.0" top="40.0" />
                </VBox.margin>

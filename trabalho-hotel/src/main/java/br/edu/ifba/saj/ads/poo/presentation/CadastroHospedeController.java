@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Alert;
 import br.edu.ifba.saj.ads.poo.model.Hospede;
 import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
-import br.edu.ifba.saj.ads.poo.App;
 
 public class CadastroHospedeController {
     @FXML
@@ -18,20 +17,13 @@ public class CadastroHospedeController {
     @FXML
     private Button botaoCadastrar;
 
-    @FXML
-    private Button botaoIrParaReservas;
-
     private GerenciadorReservas gerenciador;
 
-    private App app;
 
     public void setGerenciador(GerenciadorReservas gerenciador){
         this.gerenciador = gerenciador;
     }
 
-    public void setApp(App app){
-        this.app = app;
-    }
 
     @FXML
     private void cadastrar(){
@@ -48,10 +40,7 @@ public class CadastroHospedeController {
         campoNome.clear();
         campoCpf.clear();
     }
-    @FXML
-    private void irParaReservas() throws Exception {
-        app.abrirTelaReserva();
-    }
+   
 
 
 

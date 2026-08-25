@@ -12,6 +12,5 @@
       <Label text="CPF:" />
       <TextField fx:id="campoCpf" />
       <Button fx:id="botaoCadastrar" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
-      <Button fx:id="botaoIrParaReservas" mnemonicParsing="false" onAction="#irParaReservas" text="Ir para Reservas" />
    </children>
 </VBox>

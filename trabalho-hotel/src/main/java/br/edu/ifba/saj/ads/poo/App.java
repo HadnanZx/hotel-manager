@@ -32,26 +32,6 @@ public class App extends Application {
         stage.setTitle("Sistema do Hotel");
         stage.show();
     }
-    public void abrirTelaCadastro() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastro-hospede.fxml"));
-        Parent raiz = loader.load();
-
-        CadastroHospedeController controller = loader.getController();
-        controller.setGerenciador(gerenciador);
-        controller.setApp(this);
-
-        stagePrincipal.setScene(new Scene(raiz, 400, 300));
-    }
-
-    public void abrirTelaReserva() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("reserva-quarto.fxml"));
-        Parent raiz = loader.load();
-
-        ReservaController controller = loader.getController();
-        controller.setGerenciador(gerenciador);
-
-        stagePrincipal.setScene(new Scene(raiz, 400, 400));
-    }
 
     public Parent carregarCadastro() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("cadastro-hospede.fxml"));

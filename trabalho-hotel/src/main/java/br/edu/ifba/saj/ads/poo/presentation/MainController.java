@@ -17,13 +17,13 @@ public class MainController {
     }
     
     @FXML
-    private void mostrarCadastro() throws Exception{
+    public void mostrarCadastro() throws Exception{
         Parent conteudo = app.carregarCadastro();
         painelPrincipal.setCenter(conteudo);
     }
 
     @FXML
-    private void mostrarReserva() throws Exception{
+    public void mostrarReserva() throws Exception{
         Parent conteudo = app.carregarReserva();
         painelPrincipal.setCenter(conteudo);
     }
