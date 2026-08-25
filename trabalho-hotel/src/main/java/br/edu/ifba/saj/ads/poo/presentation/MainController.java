@@ -27,4 +27,9 @@ public class MainController {
         Parent conteudo = app.carregarReserva();
         painelPrincipal.setCenter(conteudo);
     }
+
+    public void mostrarLista() throws Exception{
+         Parent conteudo = app.carregarLista();
+        painelPrincipal.setCenter(conteudo);
+    }
 }

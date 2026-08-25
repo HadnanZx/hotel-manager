@@ -26,4 +26,9 @@ public class Reserva {
     public LocalDate getCheckout(){
         return checkout;
     }
+
+    @Override
+    public String toString(){
+        return hospede + " - " + quarto + " - " + checkin + " até " + checkout;
+    }
 }

@@ -9,6 +9,7 @@ import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
 import br.edu.ifba.saj.ads.poo.presentation.CadastroHospedeController;
 import br.edu.ifba.saj.ads.poo.presentation.MainController;
 import br.edu.ifba.saj.ads.poo.presentation.ReservaController;
+import br.edu.ifba.saj.ads.poo.presentation.ListaReservasController;
 
 public class App extends Application {
 
@@ -52,6 +53,17 @@ public class App extends Application {
 
         return raiz;
     }
+
+      public Parent carregarLista() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("lista-reservas.fxml"));
+        Parent raiz = loader.load();
+
+        ListaReservasController controller = loader.getController();
+        controller.setGerenciador(gerenciador);
+
+        return raiz;
+    }
+
 
     public static void main(String[] args) {
         launch(args);

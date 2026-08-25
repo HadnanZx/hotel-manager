@@ -19,7 +19,7 @@
                   <Insets bottom="15.0" left="15.0" right="5.0" top="40.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="botaoLista" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Lista">
+            <Button fx:id="botaoLista" mnemonicParsing="false" onAction="#mostrarLista" prefHeight="26.0" prefWidth="70.0" text="Lista">
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="5.0" top="40.0" />
                </VBox.margin>
