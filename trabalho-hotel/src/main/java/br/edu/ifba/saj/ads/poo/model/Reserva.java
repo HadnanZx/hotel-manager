@@ -1,13 +1,14 @@
 package br.edu.ifba.saj.ads.poo.model;
 import java.time.LocalDate;
 
-public class Reserva {
+public class Reserva extends AbstractModel<Reserva>{
     private Hospede hospede;
     private Quarto quarto;
     private LocalDate checkin;
     private LocalDate checkout;
 
     public Reserva(Hospede hospede, Quarto quarto, LocalDate checkin, LocalDate checkout){
+        super();
         this.hospede = hospede;
         this.quarto = quarto;
         this.checkin = checkin;
