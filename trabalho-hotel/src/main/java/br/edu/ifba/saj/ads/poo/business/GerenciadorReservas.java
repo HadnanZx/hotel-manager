@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import br.edu.ifba.saj.ads.poo.model.Hospede;
 import br.edu.ifba.saj.ads.poo.model.TipoQuarto;
 
-public class GerenciadorReservas {
+public class GerenciadorReservas implements GenericService<Reserva, Long>{
     private ArrayList<Reserva> reservas = new ArrayList<Reserva>();
     private ArrayList<Hospede> hospedes = new ArrayList<Hospede>();
     private ArrayList<Quarto> quartos = new ArrayList<Quarto>();
