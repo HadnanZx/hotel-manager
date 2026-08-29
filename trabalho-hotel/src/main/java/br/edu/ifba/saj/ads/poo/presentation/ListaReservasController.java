@@ -6,14 +6,14 @@ import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
 import br.edu.ifba.saj.ads.poo.model.Reserva;
 
 public class ListaReservasController {
-    
-    @FXML 
+
+    @FXML
     private ListView<Reserva> listaReservas;
 
     private GerenciadorReservas gerenciador;
 
-    public void setGerenciador(GerenciadorReservas gerenciador){
+    public void setGerenciador(GerenciadorReservas gerenciador) {
         this.gerenciador = gerenciador;
-        listaReservas.getItems().addAll(gerenciador.getReservas());
+        listaReservas.getItems().addAll(gerenciador.buscarTodos());
     }
 }

@@ -5,9 +5,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert;
 import br.edu.ifba.saj.ads.poo.model.Hospede;
-import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
+import br.edu.ifba.saj.ads.poo.business.HospedeService;
 
-public class CadastroHospedeController {
+public class CadastroHospedeController{
+
     @FXML
     private TextField campoNome;
 
@@ -17,13 +18,11 @@ public class CadastroHospedeController {
     @FXML
     private Button botaoCadastrar;
 
-    private GerenciadorReservas gerenciador;
+    private HospedeService hospedeService;
 
-
-    public void setGerenciador(GerenciadorReservas gerenciador){
-        this.gerenciador = gerenciador;
+    public void setHospedeService(HospedeService hospedeService){
+        this.hospedeService = hospedeService;
     }
-
 
     @FXML
     private void cadastrar(){
@@ -31,14 +30,18 @@ public class CadastroHospedeController {
         String cpf = campoCpf.getText();
 
         Hospede novoHospede = new Hospede(nome, cpf);
-        gerenciador.cadastrarHospede(novoHospede);
 
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setContentText("Hóspede Cadastrado!");
-        alerta.show();
-
-        campoNome.clear();
-        campoCpf.clear();
+        try{
+            hospedeService.salvar(novoHospede);
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+            alerta.setContentText("Hóspede cadastrado com sucesso!");
+            alerta.show();
+            campoNome.clear();
+            campoCpf.clear();
+        }catch(Exception e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setContentText(e.getMessage());
+            alerta.show();
+        }
     }
-   
 }

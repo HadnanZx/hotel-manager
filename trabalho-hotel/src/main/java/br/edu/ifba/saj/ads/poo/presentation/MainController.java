@@ -5,7 +5,7 @@ import javafx.scene.layout.BorderPane;
 import br.edu.ifba.saj.ads.poo.App;
 
 
-public class MainController {
+public class MainController{
 
     @FXML 
     private BorderPane painelPrincipal;
