@@ -1,11 +1,11 @@
 package br.edu.ifba.saj.ads.poo.model;
 
-public class Hospede extends AbstractModel<Hospede> {
+public class Hospede extends AbstractModel<Long> {
     private String nome;
     private String cpf;
 
     public Hospede (String nome, String cpf) {
-        super();
+        
         this.nome = nome;
         this.cpf = cpf;
     }

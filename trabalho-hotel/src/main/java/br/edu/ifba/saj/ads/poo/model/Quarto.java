@@ -1,12 +1,11 @@
 package br.edu.ifba.saj.ads.poo.model;
 
-public class Quarto extends AbstractModel<Quarto> {
+public class Quarto extends AbstractModel<Long> {
     private int numero;
     private TipoQuarto tipo;
     private double preco;
 
     public Quarto(int numero, TipoQuarto tipo, double preco){
-        super();
         this.numero = numero;
         this.tipo = tipo;
         this.preco = preco;
