@@ -52,18 +52,6 @@ public class GerenciadorReservas implements GenericService<Reserva, Long>{
         return false;
     }
 
-    public boolean criarReserva(Hospede hospede, Quarto quarto, LocalDate checkin, LocalDate checkout){
-        if (!checkout.isAfter(checkin)) {
-            return false;
-        }
-        if (temConflito(quarto, checkin, checkout)) {
-            return false;
-        }
-        Reserva novaReserva = new Reserva(hospede, quarto, checkin, checkout);
-        reservas.add(novaReserva);
-        return true;
-    }
-
     @Override
     public Reserva criar(Reserva entidade) throws CheckoutInvalidoException, ConflitoDeReservaException{
         if (!entidade.getCheckout().isAfter(entidade.getCheckin())) {

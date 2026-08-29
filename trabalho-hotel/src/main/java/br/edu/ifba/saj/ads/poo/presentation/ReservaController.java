@@ -9,6 +9,7 @@ import br.edu.ifba.saj.ads.poo.business.GerenciadorReservas;
 import java.time.LocalDate;
 import br.edu.ifba.saj.ads.poo.model.Hospede;
 import br.edu.ifba.saj.ads.poo.model.Quarto;
+import br.edu.ifba.saj.ads.poo.model.Reserva;
 
 public class ReservaController {
 
@@ -45,19 +46,19 @@ public class ReservaController {
         LocalDate checkinEscolhido = dataCheckin.getValue();
         LocalDate checkoutEscolhido = dataCheckout.getValue();
 
-        boolean sucesso = gerenciador.criarReserva(hospedeEscolhido, quartoEscolhido, checkinEscolhido, checkoutEscolhido);
+        Reserva novaReserva = new Reserva(hospedeEscolhido, quartoEscolhido, checkinEscolhido, checkoutEscolhido);
 
-        Alert alerta;
-        if(sucesso){
-            alerta = new Alert(Alert.AlertType.INFORMATION);
+        try{
+            gerenciador.criar(novaReserva);
+            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
             alerta.setContentText("Sua reserva foi concluida!");
-        }else{
-            alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setContentText("Não foi possivel concluir sua reserva.");
+            alerta.show();
+        }catch (Exception e){
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setContentText(e.getMessage());
+            alerta.show();
         }
-        alerta.show();
-    }
-
     
 
+    }
 }
