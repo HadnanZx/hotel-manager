@@ -18,4 +18,11 @@ public class HospedeService extends GenericServiceImpl<Hospede, Long> {
             throw new RegraDeNegocioException("CPF do hóspede é obrigatório.");
         }
     }
+
+    @Override
+    public Long salvar(Hospede entidade) throws RegraDeNegocioException {
+        Long id = super.salvar(entidade);
+        GerenciadorAuditoria.registrar("cadastrou o(a) Hóspede " + entidade.getNome());
+        return id;
+    }
 }

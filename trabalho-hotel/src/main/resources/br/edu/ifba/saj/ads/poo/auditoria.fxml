@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="br.edu.ifba.saj.ads.poo.presentation.AuditoriaController">
+    <children>
+        <TableView fx:id="tabelaAuditoria" prefHeight="400.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="colunaAcao" prefWidth="300.0" text="Ação" />
+                <TableColumn fx:id="colunaAutor" prefWidth="150.0" text="Autor" />
+                <TableColumn fx:id="colunaHorario" prefWidth="150.0" text="Horário" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

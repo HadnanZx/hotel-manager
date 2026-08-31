@@ -32,4 +32,10 @@ public class MainController{
          Parent conteudo = app.carregarLista();
         painelPrincipal.setCenter(conteudo);
     }
+
+    @FXML
+    public void mostrarAuditoria() throws Exception{
+        Parent conteudo = app.carregarAuditoria();
+        painelPrincipal.setCenter(conteudo);
+    }
 }

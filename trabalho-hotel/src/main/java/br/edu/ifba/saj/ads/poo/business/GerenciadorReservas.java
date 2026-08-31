@@ -32,4 +32,11 @@ public class GerenciadorReservas extends GenericServiceImpl<Reserva, Long> {
         }
         return false;
     }
+
+   @Override
+    public Long salvar(Reserva entidade) throws RegraDeNegocioException {
+        Long id = super.salvar(entidade);
+        GerenciadorAuditoria.registrar("cadastrou uma Reserva para o Quarto " + entidade.getQuarto().getNumero());
+        return id;
+    }
 }

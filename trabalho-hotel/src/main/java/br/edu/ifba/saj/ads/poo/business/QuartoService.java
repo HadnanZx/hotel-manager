@@ -15,4 +15,11 @@ public class QuartoService extends GenericServiceImpl<Quarto, Long> {
             throw new RegraDeNegocioException("Preço deve ser maior que zero.");
         }
     }
+
+    @Override
+    public Long salvar(Quarto entidade) throws RegraDeNegocioException {
+        Long id = super.salvar(entidade);
+        GerenciadorAuditoria.registrar("cadastrou o(a) Quarto " + entidade.getNumero());
+        return id;
+    }
 }
