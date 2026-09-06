@@ -20,6 +20,15 @@ public class Quarto extends AbstractModel<Long> {
      public double getPreco(){
         return preco;
     }
+    public void setNumero(int numero){
+         this.numero = numero; 
+    }
+    public void setTipo(TipoQuarto tipo){
+         this.tipo = tipo; 
+    }
+    public void setPreco(double preco){
+         this.preco = preco; 
+    }
 
     @Override
     public String toString() {

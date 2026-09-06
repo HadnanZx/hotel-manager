@@ -7,6 +7,10 @@ public abstract class AbstractModel<T>{
     private T id;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
+    private Usuario createdBy;
+    private Usuario updatedBy;
+    private Usuario deletedBy;
 
     public T getId(){
         return id;
@@ -30,6 +34,38 @@ public abstract class AbstractModel<T>{
 
     public void setUpdatedAt(LocalDateTime updatedAt){
         this.updatedAt = updatedAt;
+    }
+
+    public LocalDateTime getDeletedAt(){
+        return deletedAt;
+    }
+
+    public void setDeletedAt(LocalDateTime deletedAt){
+        this.deletedAt = deletedAt;
+    }
+
+    public Usuario getCreatedBy(){
+        return createdBy;
+    }
+
+    public void setCreatedBy(Usuario createdBy){
+        this.createdBy = createdBy;
+    }
+
+    public Usuario getUpdatedBy(){
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(Usuario updatedBy){
+        this.updatedBy = updatedBy;
+    }
+
+    public Usuario getDeletedBy(){
+        return deletedBy;
+    }
+
+    public void setDeletedBy(Usuario deletedBy){
+        this.deletedBy = deletedBy;
     }
 
     @Override

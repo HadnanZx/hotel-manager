@@ -10,4 +10,10 @@ public interface GenericService<T extends AbstractModel<ID>, ID> {
     void deletar(ID id);
     List<T> buscarTodos();
     void validar(T entidade) throws RegraDeNegocioException;
+
+    default List<T> buscarAtivos(){
+        return buscarTodos().stream()
+            .filter(e -> e.getDeletedAt() == null)
+            .toList();
+    }
 }

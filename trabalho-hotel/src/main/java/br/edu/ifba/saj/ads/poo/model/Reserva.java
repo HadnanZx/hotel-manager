@@ -26,7 +26,19 @@ public class Reserva extends AbstractModel<Long>{
     public LocalDate getCheckout(){
         return checkout;
     }
-
+    public void setHospede(Hospede hospede){
+    this.hospede = hospede;
+    }
+    public void setQuarto(Quarto quarto){
+        this.quarto = quarto;
+    }
+    public void setCheckin(LocalDate checkin){
+        this.checkin = checkin;
+    }
+    public void setCheckout(LocalDate checkout){
+        this.checkout = checkout;
+    }
+    
     @Override
     public String toString(){
         return hospede + " - " + quarto + " - " + checkin + " até " + checkout;

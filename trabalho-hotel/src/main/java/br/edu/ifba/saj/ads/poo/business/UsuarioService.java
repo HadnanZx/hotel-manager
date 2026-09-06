@@ -34,4 +34,7 @@ public class UsuarioService extends GenericServiceImpl<Usuario, Long>{
     public static Usuario getUsuarioLogado(){
         return usuarioLogado;
     }
+    public static void logout(){
+        usuarioLogado = null;
+    }
 }

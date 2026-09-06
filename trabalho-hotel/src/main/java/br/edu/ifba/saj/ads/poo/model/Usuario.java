@@ -5,14 +5,23 @@ public class Usuario extends AbstractModel<Long>{
     private String nome;
     private String email;
     private String senha;
+    private PerfilUsuario perfil;
 
-    public Usuario() {
+    public Usuario(){
     }
 
     public Usuario(String nome, String email, String senha){
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.perfil = PerfilUsuario.COMUM;
+    }
+
+    public Usuario(String nome, String email, String senha, PerfilUsuario perfil){
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.perfil = perfil;
     }
 
     public String getNome(){
@@ -23,7 +32,7 @@ public class Usuario extends AbstractModel<Long>{
         this.nome = nome;
     }
 
-    public String getEmail() {
+    public String getEmail(){
         return email;
     }
 
@@ -37,5 +46,13 @@ public class Usuario extends AbstractModel<Long>{
 
     public void setSenha(String senha){
         this.senha = senha;
+    }
+
+    public PerfilUsuario getPerfil(){
+        return perfil;
+    }
+
+    public void setPerfil(PerfilUsuario perfil){
+        this.perfil = perfil;
     }
 }
