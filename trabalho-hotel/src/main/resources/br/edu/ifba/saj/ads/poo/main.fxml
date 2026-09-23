@@ -2,46 +2,38 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifba.saj.ads.poo.presentation.MainController">
+<BorderPane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="550.0" style="-fx-background-color: #f4f6f8;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifba.saj.ads.poo.presentation.MainController">
    <left>
-      <VBox prefHeight="500.0" prefWidth="130.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="550.0" prefWidth="150.0" spacing="6.0" style="-fx-background-color: #2b2d42;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="12.0" right="12.0" top="24.0" />
+         </padding>
          <children>
-            <Button fx:id="botaoCadastro" mnemonicParsing="false" onAction="#mostrarCadastro" prefHeight="26.0" prefWidth="100.0" text="Cadastro">
+            <Label text="🏨 Hotel" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;">
                <VBox.margin>
-                  <Insets bottom="10.0" left="15.0" right="5.0" top="20.0" />
+                  <Insets bottom="20.0" />
                </VBox.margin>
-            </Button>
-            <Button fx:id="botaoReserva" mnemonicParsing="false" onAction="#mostrarReserva" prefHeight="26.0" prefWidth="100.0" text="Reserva">
+            </Label>
+            <Button fx:id="botaoCadastro" mnemonicParsing="false" onAction="#mostrarCadastro" prefHeight="32.0" prefWidth="126.0" text="Cadastro"
+                    style="-fx-background-color: #3d405b; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="botaoReserva" mnemonicParsing="false" onAction="#mostrarReserva" prefHeight="32.0" prefWidth="126.0" text="Reserva"
+                    style="-fx-background-color: #3d405b; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="botaoQuarto" mnemonicParsing="false" onAction="#mostrarQuarto" prefHeight="32.0" prefWidth="126.0" text="Quartos"
+                    style="-fx-background-color: #3d405b; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="botaoCalendario" mnemonicParsing="false" onAction="#mostrarCalendario" prefHeight="32.0" prefWidth="126.0" text="Calendário"
+                    style="-fx-background-color: #3d405b; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="botaoAuditoria" mnemonicParsing="false" onAction="#mostrarAuditoria" prefHeight="32.0" prefWidth="126.0" text="Auditoria"
+                    style="-fx-background-color: #3d405b; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="botaoUsuario" mnemonicParsing="false" onAction="#mostrarUsuario" prefHeight="32.0" prefWidth="126.0" text="Usuários"
+                    style="-fx-background-color: #3d405b; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="botaoSair" mnemonicParsing="false" onAction="#sair" prefHeight="32.0" prefWidth="126.0" text="Sair"
+                    style="-fx-background-color: #d62828; -fx-text-fill: white; -fx-background-radius: 6;">
                <VBox.margin>
-                  <Insets bottom="10.0" left="15.0" right="5.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="botaoQuarto" mnemonicParsing="false" onAction="#mostrarQuarto" prefHeight="26.0" prefWidth="100.0" text="Quartos">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="15.0" right="5.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="botaoCalendario" mnemonicParsing="false" onAction="#mostrarCalendario" prefHeight="26.0" prefWidth="100.0" text="Calendário">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="15.0" right="5.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="botaoAuditoria" mnemonicParsing="false" onAction="#mostrarAuditoria" prefHeight="26.0" prefWidth="100.0" text="Auditoria">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="15.0" right="5.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="botaoUsuario" mnemonicParsing="false" onAction="#mostrarUsuario" prefHeight="26.0" prefWidth="100.0" text="Usuários">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="15.0" right="5.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="botaoSair" mnemonicParsing="false" onAction="#sair" prefHeight="26.0" prefWidth="100.0" text="Sair">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="15.0" right="5.0" top="10.0" />
+                  <Insets top="20.0" />
                </VBox.margin>
             </Button>
          </children>
